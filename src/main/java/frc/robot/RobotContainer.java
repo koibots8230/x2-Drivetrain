@@ -82,7 +82,7 @@ public class RobotContainer {
         drivetrain.registerTelemetry(logger::telemeterize);
 
         Trigger shootTrigger = new Trigger(() -> joystick.getRightTriggerAxis() > 0.15);
-        // Trigger shootTrigger = new Trigger(() -> controller.getAButton());
+        // Trigger shootTrigger = new Trigger(() -> joystick.getAButton());
         shootTrigger.onTrue(shooter.setVelocityCommand(RPM.of(ShooterConstants.FLYWHEEL_RPM)));
         shootTrigger.onFalse(shooter.setVelocityCommand(RPM.of(0)));
     }

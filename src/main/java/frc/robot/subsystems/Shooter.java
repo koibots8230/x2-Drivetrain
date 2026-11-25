@@ -42,7 +42,7 @@ public class Shooter extends SubsystemBase {
     motorConfig = new SparkFlexConfig();
     motorConfig.closedLoop.p(ShooterConstants.KP);
     motorConfig.closedLoop.feedForward.kV(ShooterConstants.KV);
-    motorConfig.idleMode(IdleMode.kCoast);
+    motorConfig.idleMode(IdleMode.kBrake);
     motorConfig.smartCurrentLimit((int) ShooterConstants.CURRENT_LIMIT_AMPS);
     motorConfig.inverted(true);
     motor.configure(motorConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
